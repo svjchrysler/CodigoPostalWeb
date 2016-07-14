@@ -18,7 +18,7 @@ class EmployeeController extends Controller
                           ->first();
 
 	  	if (!empty($data_employee))
-	     	return ['id'=>$data_employee->id, 'name'=>$data_employee->name];
+	     	return ['id'=>$data_employee->id, 'name'=>$data_employee->name, 'paternalLastName'=>$data_employee->paternalLastName, 'maternalLastName'=>$data_employee->maternalLastName];
 	  	else
 	     	return '0';
  	}
