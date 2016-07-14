@@ -4,6 +4,8 @@ Route::post('/person/store', 'PersonController@store');
 
 Route::post('/valid_login', 'PersonController@valid');
 
+Route::post('/loginEmployee', 'EmployeeController@valid');
+
 Route::post('/ubication/store', 'UbicationController@store');
 
 Route::get('/municipality', 'MunicipalityController@index');
