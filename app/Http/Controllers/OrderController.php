@@ -25,6 +25,7 @@ class OrderController extends Controller
 					->join('distributions', 'distribution_order.distribution_id', '=', 'distributions.id')
 					->join('businesses', 'orders.business_id', '=', 'businesses.id')
 					->join('employees', 'distribution_order.employee_id', '=', 'employees.id')
+					->where('employees.id', '=', $id)
 					->select('orders.id', 'ubications.streetName', 'ubications.latitude', 'ubications.length', 'ubications.nameImage',
 							'distributions.shippingDate', 'businesses.name')
 					->get();
