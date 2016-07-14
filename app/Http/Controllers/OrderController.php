@@ -17,7 +17,7 @@ use DB;
 class OrderController extends Controller
 {
 
-	public function listOrders() {
+	public function listOrders($id) {
 		$orders = DB::table('ubications')
 					->join('orders', 'ubications.id', '=', 'orders.ubication_id')
 					->join('clients', 'orders.client_id', '=', 'clients.id')
@@ -25,7 +25,7 @@ class OrderController extends Controller
 					->join('distributions', 'distribution_order.distribution_id', '=', 'distributions.id')
 					->join('businesses', 'orders.business_id', '=', 'businesses.id')
 					->join('employees', 'distribution_order.employee_id', '=', 'employees.id')
-					->select('ubications.streetName', 'ubications.latitude', 'ubications.length', 'ubications.nameImage',
+					->select('orders.id', 'ubications.streetName', 'ubications.latitude', 'ubications.length', 'ubications.nameImage',
 							'distributions.shippingDate', 'businesses.name')
 					->get();
 		return $orders;
