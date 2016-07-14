@@ -16,6 +16,8 @@ Route::get('/search/contact/{nombre}/{id}', 'PersonController@searchContact');
 
 Route::get('/ubications', 'UbicationController@getUbications');
 
+Route::get('/orders', 'OrderController@listOrders');
+
 Route::get('/', function () {
     return view('welcome');
 });
