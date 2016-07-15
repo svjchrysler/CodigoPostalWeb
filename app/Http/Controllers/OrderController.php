@@ -38,6 +38,6 @@ class OrderController extends Controller
 		$order = Order::Find($id);
 		$order->state = 1;
 		$order->save();
-		return $order;
+		return "1";
 	}
 }
