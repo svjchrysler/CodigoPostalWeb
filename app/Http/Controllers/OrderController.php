@@ -36,6 +36,8 @@ class OrderController extends Controller
 
 	public function updateOrder($id) {
 		$order = Order::Find($id);
+		$order->state = 1;
+		$order->save();
 		return $order;
 	}
 }
