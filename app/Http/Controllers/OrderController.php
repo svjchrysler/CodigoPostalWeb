@@ -33,4 +33,9 @@ class OrderController extends Controller
 					->get();
 		return $orders;
 	}
+
+	public function updateOrder($id) {
+		$order = Order::Find($id);
+		return $order;
+	}
 }

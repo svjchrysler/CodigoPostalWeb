@@ -18,6 +18,8 @@ Route::get('/ubications', 'UbicationController@getUbications');
 
 Route::get('/orders/{id}', 'OrderController@listOrders');
 
+Route::get('/update/order/{id}', 'OrderController@updateOrder');
+
 Route::get('/', function () {
     return view('welcome');
 });
